@@ -2,6 +2,9 @@ package test;
 
 import bean.UserInfo;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 /**
  * @Author: rj
  * @Date: 2020-10-09 22:46
@@ -36,5 +39,23 @@ public class Test20201009 {
         changeObj(userInfo);
         System.out.println(userInfo);
 
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("1");
+        list.add("2");
+        list.add("2");
+        list.add("3");
+        ArrayList<String> list1 = list;
+        System.out.println(System.identityHashCode(list));
+        System.out.println(System.identityHashCode(list1));
+        // 通过 filter 去除 所有的 "1"
+        list = (ArrayList<String>) list.stream()
+                .filter(x -> !"1".equals(x))
+                .collect(Collectors.toList());
+        System.out.println(System.identityHashCode(list));
+        System.out.println(System.identityHashCode(list1));
+        System.out.println(list);
+        System.out.println(list1);
     }
 }
