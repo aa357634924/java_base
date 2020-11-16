@@ -50,7 +50,7 @@ public class Recursion {
 //        int n1 = r.feiBoNaQie(6);
 //        System.out.println(n1);
         // n步台阶测试
-        int n2 = r.step(0);
-        System.out.println(n2);
+//        int n2 = r.step(0);
+        System.out.println(28469*68452-68451*6584+546*845-984*256);
     }
 }
