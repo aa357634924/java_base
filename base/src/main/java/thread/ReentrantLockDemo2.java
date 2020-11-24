@@ -13,8 +13,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * A打印5次，B打印10次，C打印15次，
  * 紧接着
  * A打印5次，B打印10次，C打印15次，
- * 。。。。。。
- * 轮询打印10次
+ *  * 。。。。。。
+ *  * 轮询打印10次
  *
  * @author rj
  * @version 1.0

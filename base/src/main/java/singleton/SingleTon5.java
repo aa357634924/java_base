@@ -1,5 +1,7 @@
 package singleton;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * TODO
  * 单例模式
@@ -18,6 +20,7 @@ public class SingleTon5 {
     private SingleTon5() {
     }
 
+    // DCL （double check lock） 双端检索机制
     public static SingleTon5 getInstance() {
         if (null == singleTon) {
             synchronized (SingleTon5.class) {
@@ -31,5 +34,8 @@ public class SingleTon5 {
 
     public static void main(String[] args) {
         SingleTon5 instance = SingleTon5.getInstance();
+        AtomicInteger a = new AtomicInteger();
+        a.addAndGet(1);
+        a.getAndIncrement();
     }
 }

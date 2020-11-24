@@ -2,6 +2,7 @@ package thread;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TODO
@@ -13,8 +14,8 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () -> {
-            System.out.println("线程数已达指定数量，开始放行");
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> {
+            System.out.println("线程数已达指定数量，等本方法执行完毕即可开始放行");
         });
         for (int i = 0; i < 5; i++) {
             new Thread(() -> {
